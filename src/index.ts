@@ -68,8 +68,13 @@ function escapeText(str: string) {
 /**
  * Escape a regular expression string.
  */
+const escapeCache = new Map<string, string>();
 function escape(str: string) {
-  return str.replace(/[.+*?^${}()[\]|/\\]/g, "\\$&");
+  let cached = escapeCache.get(str);
+  if (cached !== undefined) return cached;
+  const result = str.replace(/[.+*?^${}()[\]|/\\]/g, "\\$&");
+  escapeCache.set(str, result);
+  return result;
 }
 
 /**
