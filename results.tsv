@@ -1,1 +1,2 @@
 thesis	attempt	metric	baseline	status	summary
+#1	thesis/1-cache-regex-escaping-for-delimiter	1457647.8300	1433213.8600	accepted	Added memoization cache for escape() function to avoid repeated regex operations on same delimiter input
