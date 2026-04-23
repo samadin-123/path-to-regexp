@@ -1,3 +1,4 @@
 thesis	attempt	metric	baseline	status	summary
 #1	thesis/1-cache-regex-escaping-for-delimiter	1457647.8300	1433213.8600	accepted	Added memoization cache for escape() function to avoid repeated regex operations on same delimiter input
 #2	thesis/2-optimize-token-iteration-with-for-of-to-indexed-loops	1418427.6200	1433213.8600	discarded	Converting for-of loops to indexed for loops in tokensToFunction and pathToRegexp resulted in ~1% performance regression. Modern JS engines optimize for-of iteration effectively.
+#3	thesis/3-reduce-string-concatenation-allocations-in-parse	1335520.2300	1357269.2600	discarded	Attempted to replace string concatenation with array buffer approach in parse function. Testing showed the optimization actually decreased performance by ~1.6% on average. Modern JS engines (V8) are already highly optimized for string concatenation patterns.
